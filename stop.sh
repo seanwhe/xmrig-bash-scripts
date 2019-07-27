@@ -4,10 +4,6 @@
 # * run by crontab, load the settings
 # * run by install, do not load settings
 
-stop_xmrig () {
-	screen -S $_XMRIG_SCREEN -X kill
-}
-
 echo "#################################"
 echo " KILLING SCREEN"
 echo "#################################"

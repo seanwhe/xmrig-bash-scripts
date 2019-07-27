@@ -4,10 +4,6 @@
 # * run by crontab, load the settings
 # * run by install, do not load settings
 
-start_xmrig () {
-        screen -dmS $_XMRIG_SCREEN xmrig --config=$_XMRIG_CONFIG_LOCATION
-}
-
 echo "####################################"
 echo " STARTING "
 echo "####################################"

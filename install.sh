@@ -2,10 +2,19 @@
 
 # Get settings 
 . settings.sh
+. functions.sh
 sleep 5
 
 # Stop running instance
 . stop.sh
+
+# Update system
+. maintenance.sh
+sleep 5
+
+# Install dependencies
+. depends.sh
+sleep 5
 
 # Get source and build by sourcing our build file
 . build.sh

@@ -87,6 +87,12 @@ else
         echo "vm.nr_hugepages=$_ENV_CORE" | sudo tee -a /etc/sysctl.conf
 fi
 
+# Run apt maintenance
+_APT_MAINETANCE="0"
+
+# Run install of depends
+_APT_DEPENDS="0"
+
 echo "#################################"
 echo " SETTINGS LOADED"
 echo "#################################"
