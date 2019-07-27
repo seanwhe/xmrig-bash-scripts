@@ -1,105 +1,52 @@
 {
-    "api": {
-        "id": null,
-        "worker-id": "sean-wks"
-    },
-    "autosave": true,
-    "background": false,
-    "colors": true,
-    "cpu": {
-        "enabled": true,
-        "huge-pages": true,
-        "hw-aes": null,
-        "priority": null,
-        "asm": true,
-        "cn": [
-            -1,
-            -1,
-            -1,
-            -1
-        ],
-        "cn-heavy": [
-            -1,
-            -1
-        ],
-        "cn-lite": [
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1
-        ],
-        "cn-pico": [
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1
-        ],
-        "cn/gpu": [
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1
-        ],
-        "rx": [
-            -1,
-            -1,
-            -1,
-            -1
-        ],
-        "rx/wow": [
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1,
-            -1
-        ],
-        "cn/0": false,
-        "cn-lite/0": false
-    },
-    "donate-level": 5,
-    "donate-over-proxy": 1,
-    "http": {
-        "enabled": false,
-        "host": "127.0.0.1",
-        "port": 0,
-        "access-token": null,
-        "restricted": true
-    },
-    "log-file": null,
-    "pools": [
-        {
-            "algo": null,
-            "url": "192.168.4.5:3333",
-            "user": "854sqm2Cm4TB2XgPHWqSPSbnFAe3SMzdEDzZHpukQ8NHBPFropbnkFmEKiZPgwjMFC9PTjaFscR2UU6ZwFCqJzGMUiZVbTM",
-            "pass": "sean-wks:miners@prepaidmeters.com",
-            "rig-id": "sean-wks",
-            "nicehash": true,
-            "keepalive": true,
-            "enabled": true,
-            "tls": false,
-            "tls-fingerprint": null,
-            "daemon": false
-        }
-    ],
-    "print-time": 30,
-    "retries": 5,
-    "retry-pause": 5,
-    "syslog": false,
-    "user-agent": null,
-    "watch": true
+   "api": "{",
+   "autosave": "true",
+   "background": "false",
+   "colors": "true",
+   "cpu": {
+      "enabled": true,
+      "huge-pages": true,
+      "hw-aes": null,
+      "priority": null,
+      "asm": true,
+      "cn": [
+         0,
+         1,
+         2,
+         3
+      ],
+      "cn/0": false,
+      "cn-lite/0": false
+   },
+   "donate-level": 5,
+   "donate-over-proxy": 1,
+   "http": {
+      "enabled": true,
+      "host": "192.168.10.93",
+      "port": 8080,
+      "access-token": null,
+      "restricted": false
+   },
+   "logfile": null,
+   "pools": [
+      {
+         "algo": "cn",
+         "url": "192.168.4.5:3333",
+         "user": "854sqm2Cm4TB2XgPHWqSPSbnFAe3SMzdEDzZHpukQ8NHBPFropbnkFmEKiZPgwjMFC9PTjaFscR2UU6ZwFCqJzGMUiZVbTM",
+         "pass": "sean-wks:user@example.com",
+         "rig-id": "sean-wks",
+         "nicehash": true,
+         "keepalive": true,
+         "enabled": true,
+         "tls": null,
+         "tls-fingerprint": null,
+         "daemon": false
+      }
+   ],
+   "print-time": 30,
+   "retries": 5,
+   "retry-pause": 5,
+   "syslog": "false",
+   "user-agent": "null",
+   "watch": "true"
 }
