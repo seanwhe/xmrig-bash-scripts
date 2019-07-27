@@ -88,10 +88,10 @@ else
 fi
 
 # Run apt maintenance
-_APT_MAINETANCE="0"
+_APT_MAINETANCE="1"
 
 # Run install of depends
-_APT_DEPENDS="0"
+_APT_DEPENDS="1"
 
 echo "#################################"
 echo " SETTINGS LOADED"
