@@ -44,6 +44,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Sean Wheller** - *Initial work* - [seanwhe](https://github.com/seanwhe)
 
+## CONTRIBUTING
 See also the list of [contributors](https://github.com/seanwhe/xmrig-bash-scripts/CONTRIBUTORS
 
 ## License
