@@ -7,7 +7,7 @@ echo "#################################"
 
 if [ $_APT_DEPENDS = 1 ]; then
 	
-	sudo apt install -y jo screen software-properties-common git build-essential cmake libuv1-dev libssl-dev libmicrohttpd-dev gcc g++
+	sudo apt install -y cpuid jo screen software-properties-common git build-essential cmake libuv1-dev libssl-dev libmicrohttpd-dev gcc g++
 
 else
         echo "Depend install is set to NO ($_APT_DEPENDS) Skipping"
