@@ -12,6 +12,7 @@ if [ -z "$_XMRIG_SCREEN" ]; then
 	# Load settings when run by crontab
 	# Also ensures vm.nr_hugepages is set
         . settings.sh
+	. functions.sh
 
 	# Check another instance is not already running
 	if ! screen -list | grep -q "$_XMRIG_SCREEN"; then

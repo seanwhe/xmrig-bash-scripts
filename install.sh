@@ -20,6 +20,10 @@ sleep 5
 . build.sh
 sleep 5
 
+# Create a config.json
+. config.sh
+sleep 5
+
 # Setup crontab for user
 . crontab.sh
 sleep 5
