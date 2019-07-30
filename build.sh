@@ -11,21 +11,24 @@ if [ -d "$_XMRIG_CLONE_LOCATION" ]; then
 	# Change to clone directory
 	cd $_XMRIG_CLONE
 
-	if [ git branch | grep -m1 "* $_XMRIG_BRANCH" ]; then
-	        # Pull changes from source
-	        git pull
+        if git branch | grep -q -m1 "* $_XMRIG_BRANCH"; then
+                # Pull changes from source
+                git pull
 
-	        # Call function
-	        build_xmrig
-	else
-               # Checkout required branch
-               git checkout $_XMRIG_BRANCH
+                # Call function
+                build_xmrig
 
-	       # Call function
-               build_xmrig
+        else
+                # Switch to required branch
+                echo "Require: $_XMRIG_BRANCH Switching !!!"
+                git checkout $_XMRIG_BRANCH
 
-	fi
+                # Pull changes from source
+                git pull
 
+                # Call function
+                build_xmrig
+        fi
 else
 	# Clone the source
 	echo "Cloning source to $_WORK_DIR/$_XMRIG_CLONE"
