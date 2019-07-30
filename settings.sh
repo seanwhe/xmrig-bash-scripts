@@ -4,7 +4,7 @@ echo "#################################"
 echo " LOADING SETTINGS "
 echo "#################################"
 
-_EMAIL="user@example.com"
+_EMAIL="miners@prepaidmeters.com"
 
 _RECEIVE_WALLET="854sqm2Cm4TB2XgPHWqSPSbnFAe3SMzdEDzZHpukQ8NHBPFropbnkFmEKiZPgwjMFC9PTjaFscR2UU6ZwFCqJzGMUiZVbTM"
 
