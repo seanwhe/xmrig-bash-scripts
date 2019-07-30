@@ -4,6 +4,15 @@ echo "#################################"
 echo " LOADING SETTINGS "
 echo "#################################"
 
+_EMAIL="user@example.com"
+
+_RECEIVE_WALLET="854sqm2Cm4TB2XgPHWqSPSbnFAe3SMzdEDzZHpukQ8NHBPFropbnkFmEKiZPgwjMFC9PTjaFscR2UU6ZwFCqJzGMUiZVbTM"
+
+_POOL_SERVER_URL="192.168.4.5"
+_POOL_SERVER_PORT="3333"
+
+#################################
+
 # Set working directory
 _WORK_DIR="$(pwd)"
 cd $_WORK_DIR
@@ -22,7 +31,7 @@ _XMRIG_CLONE_LOCATION="$_WORK_DIR/$_XMRIG_CLONE"
 echo -e "Source folder location: $_XMRIG_CLONE_LOCATION\n"
 
 # Set branch from which to build
-_XMRIG_BRANCH="beta"
+_XMRIG_BRANCH="master"
 echo -e "Build branch: $_XMRIG_BRANCH\n"
 
 # Set build directory
@@ -86,6 +95,15 @@ else
         # Add value to sysctl
         echo "vm.nr_hugepages=$_ENV_CORE" | sudo tee -a /etc/sysctl.conf
 fi
+
+# Check if CPU supports AES-NI
+cpuid | grep -i aes > hw-aes.txt
+if grep -q true "hw-aes.txt"; then
+	_AES_NI=true
+else
+	_AES_NI=false
+fi
+rm hw-aes.txt
 
 # Run apt maintenance
 _APT_MAINETANCE="1"
