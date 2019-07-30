@@ -10,8 +10,9 @@ echo "#################################"
 
 if [ -z "$_XMRIG_SCREEN" ]; then
 	# Load settings when run by crontab
-	echo "Loading settings"
+	echo "Loading settings and functions"
 	. settings.sh
+	. functions.sh
 
 	# Call function
 	stop_xmrig
