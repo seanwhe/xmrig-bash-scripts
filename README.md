@@ -68,11 +68,16 @@ What follows is a brief of the shell scripts you will find. The names are mostly
 * settings.sh - contains variables used by these scripts.
 * start.sh - starts xmrig in a screen session.
 * stop.sh - stops xmrig screen session.
-* update.sh - updates and existing installation.
 
 ### Viewing the log
 Default of the start script is to create a screen session named 'xmrig-cpu'. This can be changed in the settings script if required. To view the log after installation is finished or after running the start script, used the following command:
 `screen -r xmrig-cpu`
+
+### Updating
+A simple `git update` in `~/xmrig-bash-scripts` will update these scripts.
+
+The install script can be run at any time to update the xmrig source found `~/xmrig-bash-scripts/xmrig-cpu`. 
+The branch checkout is taken from the `_XMRIG_BRANCH` variable in `settings.sh`.
 
 ## Reporting issues
 
