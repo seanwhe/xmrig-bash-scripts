@@ -31,7 +31,7 @@ _XMRIG_CLONE_LOCATION="$_WORK_DIR/$_XMRIG_CLONE"
 echo -e "Source folder location: $_XMRIG_CLONE_LOCATION\n"
 
 # Set branch from which to build
-_XMRIG_BRANCH="master"
+_XMRIG_BRANCH="beta"
 echo -e "Build branch: $_XMRIG_BRANCH\n"
 
 # Set build directory
