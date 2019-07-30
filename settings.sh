@@ -66,10 +66,6 @@ echo -e "Cron on days: $_USER_CRONDAYS\n"
 _XMRIG_SCREEN="xmrig-cpu"
 echo -e "Screen session name: $_XMRIG_SCREEN\n"
 
-# Get number of available CPU Cores
-_ENV_CORE=$(nproc --all)
-echo -e "CPU Cores: $_ENV_CORE\n"
-
 # Set that user passwdless sudo 
 #sudo grep $USER /etc/sudoers.d/README
 
@@ -79,6 +75,10 @@ else
 	echo -e "$USER does not have passwdles sudo. Fixing that!!\n"
         echo "$USER     ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers.d/README
 fi
+
+# Get number of available CPU Cores
+_ENV_CORE=$(nproc --all)
+echo -e "CPU Cores: $_ENV_CORE\n"
 
 # Check that hugepages set in /etc/sysctl.conf
 _ENV_CHECK="nr_hugepages"
@@ -91,6 +91,7 @@ else
 	# Set value in current env
         echo -e "Did not find nr_hugepages in /etc/sysctl.conf. Fixing that!!\n"
         sudo sysctl -w vm.nr_hugepages="$_ENV_CORE"
+	sudo sysctl -p
 
         # Add value to sysctl
         echo "vm.nr_hugepages=$_ENV_CORE" | sudo tee -a /etc/sysctl.conf
@@ -106,9 +107,11 @@ fi
 rm hw-aes.txt
 
 # Run apt maintenance
+# 1 = yes 0 = no
 _APT_MAINETANCE="1"
 
 # Run install of depends
+# 1 = yes 0 = no
 _APT_DEPENDS="1"
 
 echo "#################################"
