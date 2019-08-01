@@ -11,7 +11,11 @@ _RECEIVE_WALLET="854sqm2Cm4TB2XgPHWqSPSbnFAe3SMzdEDzZHpukQ8NHBPFropbnkFmEKiZPgwj
 _POOL_SERVER_URL="192.168.4.5"
 _POOL_SERVER_PORT="3333"
 
-#################################
+#####################################################################
+
+#  DO NOT CHANGE AFTER THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING
+
+#####################################################################
 
 # Set working directory
 _WORK_DIR="$(pwd)"
