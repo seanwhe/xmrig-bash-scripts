@@ -14,7 +14,7 @@ _CPU_HUGE_PAGES="true"
 _CPU_HW_AES="$_AES_NI"
 _CPU_PRIORITY="null"
 _CPU_ASM="true"
-_CPU_CN="0 1 2 3"
+_CPU_CN="$_ENV_CPU_THREAD_AFFINITY"
 
 _CPU_CN_0="false"
 _CPU_CN_LITE_0="false"

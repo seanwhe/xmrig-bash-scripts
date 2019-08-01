@@ -11,7 +11,11 @@ _RECEIVE_WALLET="854sqm2Cm4TB2XgPHWqSPSbnFAe3SMzdEDzZHpukQ8NHBPFropbnkFmEKiZPgwj
 _POOL_SERVER_URL="192.168.4.5"
 _POOL_SERVER_PORT="3333"
 
-#################################
+#####################################################################
+
+#  DO NOT CHANGE AFTER THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING
+
+#####################################################################
 
 # Set working directory
 _WORK_DIR="$(pwd)"
@@ -76,10 +80,48 @@ else
         echo "$USER     ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers.d/README
 fi
 
+
+# Check if CPU supports AES-NI
+cpuid | grep -i aes > hw-aes.txt
+if grep -q true "hw-aes.txt"; then
+        _AES_NI=true
+else
+        _AES_NI=false
+fi
+rm hw-aes.txt
+
 # Get number of available CPU Cores
 _ENV_CORE=$(nproc --all)
 echo -e "CPU Cores: $_ENV_CORE\n"
 
+# Get CPU L3 cache value
+_ENV_CORE_L3=$(getconf LEVEL3_CACHE_SIZE)
+echo -e "L3 Cache in byte: $_ENV_CORE_L3\n"
+
+# Determine number of threads possible
+_ENV_CORE_L3_MB="$(($_ENV_CORE_L3 / 1000000))"
+echo -e "L3 cache in Megabyte: $_ENV_CORE_L3_MB\n"
+
+# Determine number of threads possible
+_ENV_CORE_THREADS="$(($_ENV_CORE_L3_MB / 2))"
+echo "Each thread requires 2 MB of cache"
+echo -e "Number of threads possible is: $_ENV_CORE_THREADS\n"
+
+# Affine number of threads for _CPU_CN
+_COUNTER="$(($_ENV_CORE_THREADS - 1))"
+_ENV_CPU_THREADS=()
+
+for i in `seq 0 $_COUNTER`; do
+	_ENV_CPU_THREADS+=("$i")
+done
+
+echo "Thread CPU Affinity: ${_ENV_CPU_THREADS[@]}"
+
+_ENV_CPU_THREAD_AFFINITY="${_ENV_CPU_THREADS[@]}"
+
+
+# Setting according to cpu cores but xmrig will not use all
+# change to make value use _ENV_CORE_THREADS
 # Check that hugepages set in /etc/sysctl.conf
 _ENV_CHECK="nr_hugepages"
 
@@ -96,15 +138,6 @@ else
         # Add value to sysctl
         echo "vm.nr_hugepages=$_ENV_CORE" | sudo tee -a /etc/sysctl.conf
 fi
-
-# Check if CPU supports AES-NI
-cpuid | grep -i aes > hw-aes.txt
-if grep -q true "hw-aes.txt"; then
-	_AES_NI=true
-else
-	_AES_NI=false
-fi
-rm hw-aes.txt
 
 # Run apt maintenance
 # 1 = yes 0 = no
