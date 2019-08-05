@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Set that user passwdless sudo
+
+if sudo grep -q $USER /etc/sudoers.d/README; then
+        echo -e "User $USER found in /etc/sudoers.d/README. All good!!\n"
+else
+        echo -e "$USER does not have passwdles sudo. Fixing that!!\n"
+        echo "$USER     ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers.d/README
+fi
+
 # Get settings 
 . settings.sh
 . functions.sh

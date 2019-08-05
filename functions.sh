@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 build_xmrig () {
         if [ -d $_XMRIG_BUILD_LOCATION ]; then
                 # Remove existing build directory
