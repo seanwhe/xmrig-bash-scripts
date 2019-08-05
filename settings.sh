@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 echo "#################################"
 echo " LOADING SETTINGS "
@@ -69,17 +69,6 @@ echo -e "Cron on days: $_USER_CRONDAYS\n"
 # Set the name of the screen created by start script
 _XMRIG_SCREEN="xmrig-cpu"
 echo -e "Screen session name: $_XMRIG_SCREEN\n"
-
-# Set that user passwdless sudo 
-#sudo grep $USER /etc/sudoers.d/README
-
-if sudo grep -q $USER /etc/sudoers.d/README; then
-	echo -e "User $USER found in /etc/sudoers.d/README. All good!!\n"
-else
-	echo -e "$USER does not have passwdles sudo. Fixing that!!\n"
-        echo "$USER     ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers.d/README
-fi
-
 
 # Check if CPU supports AES-NI
 cpuid | grep -i aes > hw-aes.txt

@@ -15,13 +15,14 @@ echo "Removing exiting crontab"
 crontab -r
 
 # Setup users contab
+echo "Creating new crontab"
+
 crontab -l | { cat; echo "#Start at $_USER_TIMESTART on days $_USER_CRONDAYS
-0 $_USER_CRONSTART * * $_USER_CRONDAYS $_WORK_DIR/start.sh"; } | crontab -
+0 $_USER_CRONSTART * * $_USER_CRONDAYS screen -dmS $_XMRIG_SCREEN xmrig --config=$_XMRIG_CONFIG_LOCATION"; } | crontab -
 
 crontab -l | { cat; echo "#Stop at $_USER_TIMESTOP on days $_USER_CRONDAYS
-0 $_USER_CRONSTOP * * $_USER_CRONDAYS $_WORK_DIR/stop.sh"; } | crontab -
+0 $_USER_CRONSTOP * * $_USER_CRONDAYS screen -S $_XMRIG_SCREEN -X kill"; } | crontab -
 
-crontab -l
 
 echo "#################################"
 echo " CRONTAB UPDATED"
