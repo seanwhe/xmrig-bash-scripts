@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Removes a user crontab
+# Used in conjunction with crontab-on.sh to toggle user crontab between states:
+# on - start/stop xmrig at specified times
+# off - do not start/stop xmrig
+
 echo "#################################"
 echo "#  DISABLING CRONTAB            #"
 echo "#################################"

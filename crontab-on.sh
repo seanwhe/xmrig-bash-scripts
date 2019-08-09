@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Defines a user crontab with schedules as defined in settings.sh
+# Used in conjunction with crontab-off.sh to toggle user crontab between states:
+# on - start/stop xmrig at specified times
+# off - do not start/stop xmrig
+
 echo "####################################"
 echo "#   ENABLING CRONTAB               #"
 echo "####################################"
