@@ -52,29 +52,27 @@ check_cpu () {
 calc_threads () {
 
 	# Affine number of threads for _CPU_CN
-	_COUNTER="$(($_ENV_CORE_THREADS - 1))"
-	_ENV_CPU_THREADS=()
+	_COUNTER="$(( $_ENV_CORE-1 ))"
 
-	for i in `seq 0 $_COUNTER`; do
-        	_ENV_CPU_THREADS+=("$i")
-	done
+	_ENV_CPU_THREAD_AFFINITY="$(seq -s " " 0 $_COUNTER)"
 
-	_ENV_CPU_THREAD_AFFINITY="$_ENV_CPU_THREADS"
+}
 
-	# Setting according to cpu cores but xmrig will not use all
-	# change to make value use _ENV_CORE_THREADS
-	# Check that hugepages set in /etc/sysctl.conf
-
-	_ENV_CHECK="nr_hugepages"
-
-	if sudo grep -q $_ENV_CHECK /etc/sysctl.conf; then
-       		sudo sysctl -p
-	else
-       		# Set value in current env
-       		sudo sysctl -w vm.nr_hugepages="$_ENV_CORE"
-		# Add value to sysctl
-	        sudo sysctl -p
-	fi
+calc_hugepages () {
+         # Setting according to cpu cores but xmrig will not use all
+         # change to make value use _ENV_CORE_THREADS
+         # Check that hugepages set in /etc/sysctl.conf
+       
+         _ENV_CHECK="nr_hugepages"
+     
+         if sudo grep -q $_ENV_CHECK /etc/sysctl.conf; then
+                 sudo sysctl -p
+         else    
+                 # Set value in current env
+                 sudo sysctl -w vm.nr_hugepages="$_ENV_CORE"
+                 # Add value to sysctl
+                 sudo sysctl -p
+         fi
 
 }
 
