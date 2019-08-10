@@ -1,12 +1,7 @@
 #!/bin/bash
 
-echo "#################################"
-echo " BUILD STARTING"
-echo "#################################"
-
 # Clone source
 if [ -d "$_XMRIG_CLONE_LOCATION" ]; then
-	echo "Clone already exists"
 	
 	# Change to clone directory
 	cd $_XMRIG_CLONE
@@ -20,7 +15,6 @@ if [ -d "$_XMRIG_CLONE_LOCATION" ]; then
 
         else
                 # Switch to required branch
-                echo "Require: $_XMRIG_BRANCH Switching !!!"
                 git checkout $_XMRIG_BRANCH
 
                 # Pull changes from source
@@ -31,7 +25,6 @@ if [ -d "$_XMRIG_CLONE_LOCATION" ]; then
         fi
 else
 	# Clone the source
-	echo "Cloning source to $_WORK_DIR/$_XMRIG_CLONE"
 	git clone $_XMRIG_REPO $_XMRIG_CLONE
 	
 	# Change to clone directory
@@ -52,7 +45,5 @@ sudo cp $_XMRIG_BUILD_LOCATION/xmrig $_XMRIG_TARGET_LOCATION
 
 cd $_WORK_DIR
 
-echo "#################################"
-echo " BUILD COMPLETE"
-echo "#################################"
+echo "BUILD COMPLETE"
 

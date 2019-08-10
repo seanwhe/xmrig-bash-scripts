@@ -1,32 +1,26 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # When this script is:
 # * run by crontab, load the settings
 # * run by install, do not load settings
 
-echo "####################################"
-echo " STARTING "
-echo "####################################"
+# Reload settings and functions for when running standalone
 . settings.sh
 . functions.sh
 
 if ! screen -list | grep -q "$_XMRIG_SCREEN"; then
-        # Call function
-	echo "No screen sessionfound. Starting new screen session."
+        
+	# Call function
         start_xmrig
 
         # List screen
         screen -ls
 else
-	# Call function
-        echo "Found existing screen session. Leaving."
 
 	# List screen
 	screen -ls
 
 fi
 
-echo "####################################"
-echo " STARTED - use screen -r to view "
-echo "####################################"
+echo "MINING STARTED"
 
