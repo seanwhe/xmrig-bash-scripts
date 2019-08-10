@@ -1,11 +1,11 @@
 #!/bin/bash
 
-_DEBUG=true
+_DEBUG=$1
 
 if $_DEBUG; then
-	set -x
-else
 	set +x
+else
+	set -x
 fi
 
 # Set that user passwdless sudo

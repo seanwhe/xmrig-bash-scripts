@@ -50,9 +50,13 @@ check_cpu () {
 }
 
 calc_threads () {
+	# Each thread needs 2048 byte (2 Megabyte)
+	# Calculate number of threads supported with L3 cache size
+
+	_ENV_THREAD_QTY=$(( ($_ENV_CORE_L3/2048)/1000 ))
 
 	# Affine number of threads for _CPU_CN
-	_COUNTER="$(( $_ENV_CORE-1 ))"
+	_COUNTER="$(( $_ENV_THREAD_QTY-1 ))"
 
 	_ENV_CPU_THREAD_AFFINITY="$(seq -s " " 0 $_COUNTER)"
 
@@ -69,7 +73,7 @@ calc_hugepages () {
                  sudo sysctl -p
          else    
                  # Set value in current env
-                 sudo sysctl -w vm.nr_hugepages="$_ENV_CORE"
+                 sudo sysctl -w vm.nr_hugepages="$_ENV_THREAD_QTY"
                  # Add value to sysctl
                  sudo sysctl -p
          fi
