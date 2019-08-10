@@ -11,7 +11,6 @@ fi
 
 # Get settings 
 . settings.sh
-. functions.sh
 sleep 5
 
 # Stop running instance
