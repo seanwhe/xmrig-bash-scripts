@@ -2,5 +2,5 @@
 
 echo "$_CONFIG_JSON" | tee config.json
 
-echo "CONFIG CREATED"
+echo "${_GREEN}CONFIG CREATED${_RESET}"
 

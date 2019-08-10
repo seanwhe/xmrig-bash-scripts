@@ -5,10 +5,6 @@
 # on - start/stop xmrig at specified times
 # off - do not start/stop xmrig
 
-echo "####################################"
-echo "#   ENABLING CRONTAB               #"
-echo "####################################"
-
 # Get settings
 . settings.sh
 . functions.sh
@@ -18,7 +14,5 @@ sleep 5
 . crontab.sh
 sleep 5
 
-echo "####################################"
-echo "#   CRONTAB ENABLED                #"
-echo "####################################"
+echo "${_GREEN}CRONTAB ENABLED${_RESET}"
 

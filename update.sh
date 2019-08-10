@@ -6,4 +6,4 @@ git pull
 . install.sh
 sleep 5
 
-echo "UPATE COMPLETE"
+echo "${_GREEN}UPDATE COMPLETE${_RESET}"

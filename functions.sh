@@ -80,4 +80,4 @@ calc_hugepages () {
 
 }
 
-echo -e "FUNCTIONS LOADED\n\n"
+echo -e "${_GREEN}FUNCTIONS LOADED${_RESET}"

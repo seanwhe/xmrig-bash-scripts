@@ -15,5 +15,5 @@ crontab -l | { cat; echo "#Start at $_USER_TIMESTART on days $_USER_CRONDAYS
 crontab -l | { cat; echo "#Stop at $_USER_TIMESTOP on days $_USER_CRONDAYS
 0 $_USER_CRONSTOP * * $_USER_CRONDAYS screen -S $_XMRIG_SCREEN -X kill"; } | crontab -
 
-echo "CRONTAB CREATED"
+echo "${_GREEN}CRONTAB CREATED${_RESET}"
 

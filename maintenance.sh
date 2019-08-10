@@ -6,5 +6,5 @@ if [ $_APT_MAINETANCE = 1 ]; then
 
 fi
 
-echo "MAINTENANCE COMPLETE"
+echo "${_GREEN}MAINTENANCE COMPLETE${_RESET}"
 

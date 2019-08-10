@@ -120,5 +120,5 @@ _APT_MAINETANCE="1"
 # 1 = yes 0 = no
 _APT_DEPENDS="1"
 
-echo -e "SETTINGS LOADED\n\n"
+echo -e "${_GREEN}SETTINGS LOADED${_RESET}"
 

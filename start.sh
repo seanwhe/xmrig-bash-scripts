@@ -22,5 +22,5 @@ else
 
 fi
 
-echo "MINING STARTED"
+echo "${_GREEN}MINING STARTED${_RESET}"
 

@@ -16,5 +16,5 @@ else
         stop_xmrig
 fi
 
-echo "MINING STOPPED"
+echo "${_GREEN}MINING STOPPED${_RESET}"
 
