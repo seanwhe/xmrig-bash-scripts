@@ -13,7 +13,7 @@ echo "${_GREEN}MINING STARTED${_RESET}"
 if ! screen -list | grep -q "$_XMRIG_SCREEN"; then
 
         # Call functions
-	show_mysettings
+	show_settings
         start_xmrig
 
         # List screen
