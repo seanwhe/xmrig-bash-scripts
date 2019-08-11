@@ -27,7 +27,7 @@ fi
 
 echo "${_CYAN}MINING RUNNING${_RESET}"
 echo "${_YELLOW}  The process is running in a screen session."
-echo "${_YELLOW}  The screen session is named: $_XMRIG_SCREEN"
-echo "${_YELLOW}  To view the process enter 'screen -r $_XMRIG_SCREEN'${_RESET}"
+echo "${_YELLOW}  The screen session is named:${_RESET} $_XMRIG_SCREEN"
+echo "${_YELLOW}  Command to view process:${_RESET} screen -r $_XMRIG_SCREEN"
 echo "${_MAGENTA} ENJOY!!!${_RESET}"
 
