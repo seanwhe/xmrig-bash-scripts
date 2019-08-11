@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "${_GREEN}MINING STARTED${_RESET}"
+
 # When this script is:
 # * run by crontab, load the settings
 # * run by install, do not load settings
@@ -23,5 +25,9 @@ else
 
 fi
 
-echo "${_GREEN}MINING STARTED${_RESET}"
+echo "${_CYAN}MINING RUNNING${_RESET}"
+echo "${_YELLOW}  The process is running in a screen session."
+echo "${_YELLOW}  The screen session is named: $_XMRIG_SCREEN"
+echo "${_YELLOW}  To view the process enter 'screen -r $_XMRIG_SCREEN'${_RESET}"
+echo "${_MAGENTA} ENJOY!!!${_RESET}"
 

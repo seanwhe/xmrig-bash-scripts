@@ -1,11 +1,16 @@
 #!/bin/bash
 
+echo -e "${_GREEN}DEFAULT SETTINGS LOADING${_RESET}"
+
 _EMAIL="miners@prepaidmeters.com"
 
 _RECEIVE_WALLET="854sqm2Cm4TB2XgPHWqSPSbnFAe3SMzdEDzZHpukQ8NHBPFropbnkFmEKiZPgwjMFC9PTjaFscR2UU6ZwFCqJzGMUiZVbTM"
 
 _POOL_SERVER_URL="pool.supportxmr.com"
 _POOL_SERVER_PORT="3333"
+
+# Call function
+show_settings
 
 #######################################################################
 #  DO NOT CHANGE AFTER THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING  #
@@ -71,8 +76,6 @@ _USER_AGENT="null"
 
 _WATCH="true"
 
-_CONFIG_JSON=$(jo -p -B api=$(jo id=$_API_ID worker-id=$_API_WORKER_ID) autosave=$_AUTOSAVE background=$_BACKGROUND colors=$_COLORS cpu=$(jo enabled=$_CPU_ENABLED huge-pages=$_CPU_HUGE_PAGES hw-aes=$_CPU_HW_AES priority=$_CPU_PRIORITY asm=$_CPU_ASM cn=$(jo -a $_CPU_CN) cn/0=$_CPU_CN_0 cn-lite/0=$_CPU_CN_LITE_0) donate-level=$_DONATE_LEVEL donate-over-proxy=$_DONATE_OVER_PROXY http=$(jo enabled=$_HTTP_ENABLED host=$_HTTP_HOST port=$_HTTP_PORT access-token=$_HTTP_ACCESS_TOKEN restricted=$_HTTP_RESTRICTED) logfile=$_LOGFILE pools=$(jo -a $(jo algo=$_POOLS_ALGO url=$_POOLS_URL user=$_POOLS_USER pass=$_POOLS_PASS rig-id=$_POOLS_RIG_ID nicehash=$_POOLS_NICEHASH keepalive=$_POOLS_KEEPALIVE enabled=$_POOLS_ENABLED tls=$_POOLS_TLS tls-fingerprint=$_POOLS_TLS_FINDERPRINT daemon=$_POOLS_DAEMON)) print-time=$_PRINT_TIME retries=$_RETRIES retry-pause=$_RETRIES_PAUSE syslog=$_SYSLOG user-agent=$_USER_AGENT watch=$_WATCH)
-
 # Set working directory
 _WORK_DIR="$(pwd)"
 cd $_WORK_DIR
@@ -126,13 +129,6 @@ _APT_MAINETANCE="1"
 # 1 = yes 0 = no
 _APT_DEPENDS="1"
 
-# Colors
-_GREEN=`tput setaf 2`
-_YELLOW=`tput setaf 3`
-_BLUE=`tput setaf 4`
-_MAGENTA=`tput setaf 5`
-_CYAN=`tput setaf 6`
-_RESET=`tput sgr0`
 
-echo -e "${_GREEN}SETTINGS LOADED${_RESET}"
+echo -e "${_CYAN}DEFAULT SETTINGS LOADED${_RESET}"
 

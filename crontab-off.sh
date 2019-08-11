@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "${_GREEN}DISABLE CRONTAB STARTED${_RESET}"
+
 # Removes a user crontab
 # Used in conjunction with crontab-on.sh to toggle user crontab between states:
 # on - start/stop xmrig at specified times
@@ -12,5 +14,5 @@ crontab -l > crontab
 echo "Removing exiting crontab"
 crontab -r
 
-echo "${_GREEN}CRONTAB DISABLED${_RESET}"
+echo "${_CYAN}DISABLE CRONTAB STOPPED${_RESET}"
 
