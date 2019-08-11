@@ -14,6 +14,7 @@ if ! screen -list | grep -q "$_XMRIG_SCREEN"; then
 
         # Call functions
 	show_settings
+	show_mysettings
         start_xmrig
 
         # List screen

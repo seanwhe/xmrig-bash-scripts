@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "${_GREEN}DEFAULT SETTINGS LOADING${_RESET}"
+echo -e "${_GREEN}LOADING DEFAULT SETTINGS${_RESET}"
 
 _EMAIL="miners@prepaidmeters.com"
 

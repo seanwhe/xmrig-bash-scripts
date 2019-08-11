@@ -70,4 +70,4 @@ SCREEN=""
 . start.sh
 
 
-echo -e "${_CYAN}INSTALLATION STOPPED${_RESET}"
+echo -e "${_CYAN}INSTALLATION COMPLETED${_RESET}"
