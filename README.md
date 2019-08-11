@@ -11,6 +11,7 @@ A set of convenience scripts, written in bash, to help manage installation, conf
 There is allot to install so the install script will do most of the heavy lifting.
 At the start the expectation is that you have:
 * Computer running Ubuntu 18.04 (LTS)
+* Bash shell
 * User account with sudo privileges
 * Installed git
 * Optionally installed [xmrig-proxy](https://github.com/xmrig/xmrig-proxy)
@@ -21,38 +22,37 @@ Some knowledge of:
 * Linux Command Line Interface
 * Linux shell `bash`
 
-There is more to install but the install script will install the rest.
-
 ### Installation
 
 1. Change to your user home directory.
    `cd ~`
-
-2. Install git.
+1. Install git.
    `sudo apt install git`
-
-3. Clone this project.
+1. Clone this project.
    `git clone https://github.com/seanwhe/xmrig-bash-scripts`
-
-4. Change into the cloned directory. 
+1. Change into the cloned directory. 
    `cd xmrig-bash-scripts`
-
-5. Edit the settings file to your preference.
-   `vim settings.sh`
-
-6. Run the install script
+1. Run the install script
    `./install.sh`
-
-7. After install is complete. Attach to the screen session created during the installation.
+1. When prompted: "Enter your own settings?" enter 'y'es.
+1. Enter values for your:
+   1. Pool server URL
+   1. Pool server TCP port
+   1. Receive wallet address
+   1. Email address
+   1. Miner identifier name
+1. After install is complete. Attach to the screen session created during the installation.
    `screen -r`
 
 ### Operation
 
 Defaults - The settings.sh contains a number of variables. With the exception of the 'xmrig' binary, which is installed to `/usr/bin/xmrig`, all files remain in the cloned project directory `~/xmrig-bash-scripts`. Any files generated while running the scripts are also created in this directory. 
 
-During install the folder source for [xmrig cpu](https://github.com/xmrig/xmrig) is cloned to `~/xmrig-bash-scripts/xmrig-cpu/`. The `config.json` is also created in this path. 
+During install the folder source for [xmrig cpu](https://github.com/xmrig/xmrig) is cloned to `~/xmrig-bash-scripts/xmrig-cpu/`. The file `config.json`, used to configure xmrig, is also created in this path and is passed to xmrig at startup. 
 
-This should work out the box, if you edit only the top section of `settings.sh` and followed the steps here.
+During installation it is recomended to enter your own settings. This creates a file named 'mysettings.sh' which will not be overwritten during future installs or upgrades. Values for variables found in 'mysettings.sh' are used to create 'config.json'.
+
+This should work out the box, if you follow the installation steps and enter your own values for 'mysettings.sh.
 
 Once you have a running xmrig then you can start playing around and tweaking to suite requirements.
 
@@ -67,6 +67,7 @@ The scripts are designed to be modular to promote resuse, execute exclusion and 
 * crontab-on.sh - redefines the users crontab as created during install.
 * depends.sh - installs dependancies required by xmrig and these scripts.
 * functions.sh - a collection of functions used in various of the scripts.
+* input.sh - prompts to enter values for creating 'mysettings.sh'
 * install.sh - the main entry point when first installing.
 * maintenance.sh - performs apt update, upgrade, autoremove and autoclean operations.
 * settings.sh - contains variables used by these scripts.
