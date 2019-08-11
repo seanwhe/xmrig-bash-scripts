@@ -2,16 +2,14 @@
 
 # Ask user questions
 # Capture input
-. functions.sh
-. settings.sh
 
-echo -e "${_YELLOW}Choose to use default settings or enter your own.\n"
+echo -e "${_YELLOW}Opt for default settings or enter your own.\n"
 
-echo -e "Use defaults and values will be taken from 'settings.sh'."
-echo -e "Enter your own and settings will persist to 'mysettings.sh'.\n"
+echo -e "No - values taken from 'settings.sh'."
+echo -e "Yes - values taken from 'mysettings.sh' (recomended).\n"
 
-echo -e "Preference is given to settings in 'mysettings.sh'."
-echo -e "When starting from 'start.sh' and 'mysettings.sh' exists it will be loaded instead of 'settings.sh'.${_RESET}\n"
+echo -e "When 'mysettings.sh' they are given preference at installation and on subsequence restarts."
+echo -e "Own settings is recomended to avoid your settings being overidden in upgrades.${_RESET}\n"
 
 if [ -f $_WORK_DIR/$_MYSETTINGS_FILE ]; then
 
@@ -58,3 +56,5 @@ else
 	fi
 
 fi
+
+echo -e "${_GREEN}MYSETTINGS LOADED${_RESET}"

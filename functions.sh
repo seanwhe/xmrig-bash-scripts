@@ -14,7 +14,7 @@ function prompt_confirm() {
 function show_mysettings () {
 	if [ -f $_WORK_DIR/$_MYSETTINGS_FILE ]; then
                 . $_MYSETTINGS_FILE
-                echo "${_GREEN}Settings from loaded from mysettings.sh.${_RESET}"
+                echo "${_CYAN}Settings from loaded from mysettings.sh.${_RESET}"
                 echo "${_GREEN}Pool URL:${_RESET}: $_POOL_SERVER_URL"
                 echo "${_GREEN}Pool Port:${_RESET}: $_POOL_SERVER_PORT"
                 echo "${_GREEN}Recieve Wallet:${_RESET}: $_RECEIVE_WALLET"
