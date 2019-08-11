@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "${_GREEN}BUILD STARTED${_RESET}"
+
 # Clone source
 if [ -d "$_XMRIG_CLONE_LOCATION" ]; then
 	
@@ -45,5 +47,5 @@ sudo cp $_XMRIG_BUILD_LOCATION/xmrig $_XMRIG_TARGET_LOCATION
 
 cd $_WORK_DIR
 
-echo "${_GREEN}BUILD COMPLETE${_RESET}"
+echo "${_CYAN}BUILD STOPPED${_RESET}"
 

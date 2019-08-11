@@ -1,5 +1,17 @@
 #!/bin/bash
 
+
+# Colors
+_CYAN=`tput setaf 1`
+_GREEN=`tput setaf 2`
+_YELLOW=`tput setaf 3`
+_BLUE=`tput setaf 4`
+_MAGENTA=`tput setaf 5`
+_CYAN=`tput setaf 6`
+_RESET=`tput sgr0`
+
+echo "${_GREEN}INSTALLATION STARTED${_RESET}"
+
 _DEBUG=$1
 
 if $_DEBUG; then
@@ -18,6 +30,7 @@ fi
 
 # Load functions
 . functions.sh
+sleep 5
 
 # Get settings 
 . settings.sh
@@ -57,4 +70,4 @@ SCREEN=""
 . start.sh
 
 
-echo -e "${_GREEN}INSTALLATION COMPLETE${_RESET}"
+echo -e "${_CYAN}INSTALLATION COMPLETED${_RESET}"

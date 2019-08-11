@@ -2,6 +2,8 @@
 
 # Install the software requirements
 
+echo "${_GREEN}INSTALL DEPENDS STARTED${_RESET}"
+
 if [ $_APT_DEPENDS = 1 ]; then
 
         # Install xmrig depends	
@@ -12,4 +14,4 @@ if [ $_APT_DEPENDS = 1 ]; then
 
 fi
 
-echo "${_GREEN}DEPENDENCIES INSTALLED${_RESET}"
+echo "${_CYAN}INSTALL DEPENDS STOPPED${_RESET}"

@@ -4,6 +4,8 @@
 # * run by crontab, load the settings
 # * run by install, do not load settings
 
+echo "${_GREEN}END MINING STARTED${_RESET}"
+
 if [ -z "$_XMRIG_SCREEN" ]; then
 	# Load settings when run by crontab
 	. settings.sh
@@ -16,5 +18,5 @@ else
         stop_xmrig
 fi
 
-echo "${_GREEN}MINING STOPPED${_RESET}"
+echo "${_CYAN}END MINING STOPPED${_RESET}"
 

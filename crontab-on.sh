@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "${_GREEN}ENABLE CRONTAB STARTED${_RESET}"
+
 # Defines a user crontab with schedules as defined in settings.sh
 # Used in conjunction with crontab-off.sh to toggle user crontab between states:
 # on - start/stop xmrig at specified times
@@ -14,5 +16,5 @@ sleep 5
 . crontab.sh
 sleep 5
 
-echo "${_GREEN}CRONTAB ENABLED${_RESET}"
+echo "${_CYAN}ENABLE CRONTAB STOPPED${_RESET}"
 
