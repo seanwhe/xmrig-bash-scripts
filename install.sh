@@ -8,9 +8,6 @@ else
 	set -x
 fi
 
-_GREEN=`tput setaf 2`
-_RESET=`tput sgr0`
-
 # Set that user passwdless sudo
 if sudo grep -q $USER /etc/sudoers.d/README; then
         echo -e "User $USER found in /etc/sudoers.d/README. All good!!\n"
@@ -24,7 +21,11 @@ fi
 
 # Get settings 
 . settings.sh
-sleep 5 
+sleep 5
+
+# User input
+. input.sh
+sleep 5
 
 # Stop running instance
 . stop.sh

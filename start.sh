@@ -5,12 +5,13 @@
 # * run by install, do not load settings
 
 # Reload settings and functions for when running standalone
-. settings.sh
 . functions.sh
+. settings.sh
 
 if ! screen -list | grep -q "$_XMRIG_SCREEN"; then
-        
-	# Call function
+
+        # Call functions
+	show_mysettings
         start_xmrig
 
         # List screen

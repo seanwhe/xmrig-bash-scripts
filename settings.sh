@@ -4,7 +4,7 @@ _EMAIL="miners@prepaidmeters.com"
 
 _RECEIVE_WALLET="854sqm2Cm4TB2XgPHWqSPSbnFAe3SMzdEDzZHpukQ8NHBPFropbnkFmEKiZPgwjMFC9PTjaFscR2UU6ZwFCqJzGMUiZVbTM"
 
-_POOL_SERVER_URL="192.168.4.5"
+_POOL_SERVER_URL="pool.supportxmr.com"
 _POOL_SERVER_PORT="3333"
 
 #######################################################################
@@ -98,6 +98,12 @@ _XMRIG_BUILD_LOCATION="$_XMRIG_CLONE_LOCATION/$_XMRIG_BUILD"
 # Set where to install binary
 _XMRIG_TARGET_LOCATION="/usr/bin/"
 
+# Set mysettings file
+_MYSETTINGS_FILE="mysettings.sh"
+
+# Set mysettings file location
+_MYSETTINGS_FILE_LOCATION="$_WORK_DIR/$_MYSETTINGS_FILE"
+
 # Set the config file name
 _XMRIG_CONFIG="config.json"
 
@@ -119,6 +125,14 @@ _APT_MAINETANCE="1"
 # Run install of depends
 # 1 = yes 0 = no
 _APT_DEPENDS="1"
+
+# Colors
+_GREEN=`tput setaf 2`
+_YELLOW=`tput setaf 3`
+_BLUE=`tput setaf 4`
+_MAGENTA=`tput setaf 5`
+_CYAN=`tput setaf 6`
+_RESET=`tput sgr0`
 
 echo -e "${_GREEN}SETTINGS LOADED${_RESET}"
 
