@@ -2,3 +2,5 @@ xmrig-cpu/
 *.swp
 crontab
 config.json
+myconfig.json
+mysettings.sh
