@@ -4,13 +4,8 @@
 # * run by crontab, load the settings
 # * run by install, do not load settings
 
-echo "#################################"
-echo " KILLING SCREEN"
-echo "#################################"
-
 if [ -z "$_XMRIG_SCREEN" ]; then
 	# Load settings when run by crontab
-	echo "Loading settings and functions"
 	. settings.sh
 	. functions.sh
 
@@ -21,10 +16,5 @@ else
         stop_xmrig
 fi
 
-# Check results
-echo "Screen listing"
-screen -ls
+echo "${_GREEN}MINING STOPPED${_RESET}"
 
-echo "#################################"
-echo " SCREEN KILLED"
-echo "#################################"

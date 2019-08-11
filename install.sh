@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# Set that user passwdless sudo
+_DEBUG=$1
 
+if $_DEBUG; then
+	set +x
+else
+	set -x
+fi
+
+# Set that user passwdless sudo
 if sudo grep -q $USER /etc/sudoers.d/README; then
         echo -e "User $USER found in /etc/sudoers.d/README. All good!!\n"
 else
@@ -9,9 +16,15 @@ else
         echo "$USER     ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers.d/README
 fi
 
+# Load functions
+. functions.sh
+
 # Get settings 
 . settings.sh
-. functions.sh
+sleep 5
+
+# User input
+. input.sh
 sleep 5
 
 # Stop running instance
@@ -44,6 +57,4 @@ SCREEN=""
 . start.sh
 
 
-echo "####################################"
-echo "# ALL DONE - INSTALLATION COMPLETE #"
-echo "####################################"
+echo -e "${_GREEN}INSTALLATION COMPLETE${_RESET}"

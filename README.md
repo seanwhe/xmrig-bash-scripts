@@ -19,11 +19,11 @@ At the start the expectation is that you have:
 
 Some knowledge of:
 * Linux Command Line Interface
-* Unix shell `bash`
+* Linux shell `bash`
 
 There is more to install but the install script will install the rest.
 
-### Installion
+### Installation
 
 1. Change to your user home directory.
    `cd ~`
@@ -43,34 +43,40 @@ There is more to install but the install script will install the rest.
 6. Run the install script
    `./install.sh`
 
-7. Attach to the screen session created during the installation.
+7. After install is complete. Attach to the screen session created during the installation.
    `screen -r`
 
 ### Operation
 
-With the exception of the 'xmrig' binary, which is installed to `/usr/bin/xmrig`, all files remain in the cloned project directory `~/xmrig-bash-scripts`. Any files generated while running the scripts are created in this directory. 
+Defaults - The settings.sh contains a number of variables. With the exception of the 'xmrig' binary, which is installed to `/usr/bin/xmrig`, all files remain in the cloned project directory `~/xmrig-bash-scripts`. Any files generated while running the scripts are also created in this directory. 
 
-During install the folder source for [xmrig cpu](https://github.com/xmrig/xmrig) is cloned to `xmrig-cpu/`in the path. The `config.json` is also created in this path. 
+During install the folder source for [xmrig cpu](https://github.com/xmrig/xmrig) is cloned to `~/xmrig-bash-scripts/xmrig-cpu/`. The `config.json` is also created in this path. 
 
-This should work out the box, if you edit only the top section of `settings.sh`.
+This should work out the box, if you edit only the top section of `settings.sh` and followed the steps here.
 
 Once you have a running xmrig then you can start playing around and tweaking to suite requirements.
 
-What follows is a brief of the shell scripts you will find. The names are mostly self explanatory. Comments and notes are used liberally in the scripts to help give you hints as to how it works. The scripts are designed to be modular to promote resuse, execute exclusion and standalone execution.
+What follows is a brief of the shell scripts you will find. The names are mostly self explanatory.
+Comments and notes are used liberally in the scripts to help give you hints as to how it works.
+The scripts are designed to be modular to promote resuse, execute exclusion and standalone execution.
 
 * build.sh - clones xmrig to ``~/xmrig-bash-scripts`/xmrig-cpu`, configures, builds and copies xmrig to `/usr/bin/`
 * config.sh - contains variables that aid in defining the values for the attributes found in config.json.
 * crontab.sh - installs a cron to start and a cron to stop at specific times (Can be commented out of install if desired).
+* crontab-off - removed the users crontab created during install.
+* crontab-on.sh - redefines the users crontab as created during install.
 * depends.sh - installs dependancies required by xmrig and these scripts.
 * functions.sh - a collection of functions used in various of the scripts.
 * install.sh - the main entry point when first installing.
-* maintenance.sh - performs apt update and upgrade.
+* maintenance.sh - performs apt update, upgrade, autoremove and autoclean operations.
 * settings.sh - contains variables used by these scripts.
 * start.sh - starts xmrig in a screen session.
 * stop.sh - stops xmrig screen session.
 
 ### Viewing the log
-Default of the start script is to create a screen session named 'xmrig-cpu'. This can be changed in the settings script if required. To view the log after installation is finished or after running the start script, used the following command:
+Default of the start script is to create a screen session named 'xmrig-cpu'.
+This can be changed in the settings script if required.
+To view the log after installation is finished or after running the start script, used the following command:
 `screen -r xmrig-cpu`
 
 ### Updating
@@ -79,11 +85,14 @@ A simple `git update` in `~/xmrig-bash-scripts` will update these scripts.
 The install script can be run at any time to update the xmrig source found `~/xmrig-bash-scripts/xmrig-cpu`. 
 The branch checkout is taken from the `_XMRIG_BRANCH` variable in `settings.sh`.
 
+A script named update.sh is provided to perform both these steps in a single command.
+
 ## Reporting issues
 
 [xmrig cpu](https://github.com/xmrig/xmrig) and [xmrig bash scripts](https://github.com/seanwhe/xmrig-bash-scripts.git) are different projects run by different people. 
 
-While the developers of both projects may be seen interacting with one another on either project, we ask that you report issues to the respective projects. In other words, post issues for:
+While the developers of both projects may be seen interacting with one another on either project, we ask that you report issues to the respective projects.
+In other words, post issues for:
 * xmrig, the Monero (XMR) CPU miner, over at [xmrig issues tracker](https://github.com/xmrig/xmrig/issues)
 * xmrig-bash-scripts, these conveniece scripts, over at [xmrig-bash-scripts](https://github.com/seanwhe/xmrig-bash-scripts/issues)
 
