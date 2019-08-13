@@ -114,8 +114,8 @@ _XMRIG_CONFIG="config.json"
 _XMRIG_CONFIG_LOCATION="$_WORK_DIR/$_XMRIG_CONFIG"
 
 # Set values for crontab
-_USER_CRONSTART="18"
-_USER_CRONSTOP="6"
+_USER_CRONSTART="17"
+_USER_CRONSTOP="8"
 _USER_CRONDAYS="1-5"
 
 # Set the name of the screen created by start script

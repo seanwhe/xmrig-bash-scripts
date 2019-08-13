@@ -36,13 +36,6 @@ sleep 5
 . settings.sh
 sleep 5
 
-# User input
-. input.sh
-sleep 5
-
-# Stop running instance
-. stop.sh
-
 # Update system
 . maintenance.sh
 sleep 5
@@ -50,6 +43,13 @@ sleep 5
 # Install dependencies
 . depends.sh
 sleep 5
+
+# User input
+. input.sh
+sleep 5
+
+# Stop running instance
+. stop.sh
 
 # Get source and build by sourcing our build file
 . build.sh

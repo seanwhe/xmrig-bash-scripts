@@ -1,9 +1,11 @@
 #!/bin/bash
 
+echo "${_GREEN}UPDATE STARTED${_RESET}"
+
 git pull
 
 # install
 . install.sh
 sleep 5
 
-echo "${_GREEN}UPDATE COMPLETE${_RESET}"
+echo "${_CYAN}UPDATE COMPLETE${_RESET}"
