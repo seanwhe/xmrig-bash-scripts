@@ -15,23 +15,18 @@ function prompt_confirm() {
 
 function show_settings () {
 	echo "${_CYAN}Settings from loaded environment:${_RESET}"
-        echo "${_GREEN}Pool URL:${_RESET}: $_POOL_SERVER_URL"
-        echo "${_GREEN}Pool Port:${_RESET}: $_POOL_SERVER_PORT"
-        echo "${_GREEN}Recieve Wallet:${_RESET}: $_RECEIVE_WALLET"
-        echo "${_GREEN}Email Address:${_RESET}: $_EMAIL"
-        echo "${_GREEN}Worker Identity:${_RESET}: $_API_WORKER_ID"
+        echo "${_GREEN}Pool URL:${_RESET}: $_POOLS_URL"
+        echo "${_GREEN}Recieve Wallet:${_RESET}: $_POOLS_USER"
+        echo "${_GREEN}Email Address:${_RESET}: $_POOLS_PASS"
 }
 
 function show_mysettings () {
         if [ -f $_WORK_DIR/$_MYSETTINGS_FILE ]; then
 		load_mysettings
 		echo "${_CYAN}Settings from mysettings.sh:${_RESET}"
-                echo "${_CYAN}Settings loaded:${_RESET}"
-                echo "${_GREEN}Pool URL:${_RESET}: $_POOL_SERVER_URL"
-                echo "${_GREEN}Pool Port:${_RESET}: $_POOL_SERVER_PORT"
-                echo "${_GREEN}Recieve Wallet:${_RESET}: $_RECEIVE_WALLET"
-                echo "${_GREEN}Email Address:${_RESET}: $_EMAIL"
-                echo "${_GREEN}Worker Identity:${_RESET}: $_API_WORKER_ID"
+		echo "${_GREEN}Pool URL:${_RESET}: $_POOLS_URL"
+	        echo "${_GREEN}Recieve Wallet:${_RESET}: $_POOLS_USER"
+	        echo "${_GREEN}Email Address:${_RESET}: $_POOLS_PASS"
         fi
 }
 
