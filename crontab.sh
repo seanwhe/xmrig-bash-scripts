@@ -12,7 +12,7 @@ crontab -r
 
 # Setup users contab
 
-crontab -l | { cat; echo "#Start at $_USER_TIMESTART on days $_USER_CRONDAYS
+crontab -l | { cat; echo "#Start at $_USER_CRONSTART on days $_USER_CRONDAYS
 0 $_USER_CRONSTART * * $_USER_CRONDAYS screen -dmS $_XMRIG_SCREEN xmrig --config=$_XMRIG_CONFIG_LOCATION"; } | crontab -
 
 crontab -l | { cat; echo "#Stop at $_USER_TIMESTOP on days $_USER_CRONDAYS

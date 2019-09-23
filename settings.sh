@@ -16,7 +16,7 @@ show_settings
 #  DO NOT CHANGE AFTER THIS POINT UNLESS YOU KNOW WHAT YOU ARE DOING  #
 #######################################################################
 
-_API_ID="null"
+_API_ID='null'
 _API_WORKER_ID="$HOSTNAME"
 
 _AUTOSAVE="true"
@@ -34,12 +34,17 @@ calc_threads
 _CPU_ENABLED="true"
 _CPU_HUGE_PAGES="true"
 _CPU_HW_AES="$_AES_NI"
-_CPU_PRIORITY="null"
+_CPU_PRIORITY='null'
 _CPU_ASM="true"
 _CPU_CN="$_ENV_CPU_THREAD_AFFINITY"
 
 _CPU_CN_0="false"
 _CPU_CN_LITE_0="false"
+
+_OPENCL_ENABLED="false"
+_OPENCL_CACHE="true"
+_OPENCL_LOADER='null'
+_OPENCL_PLATFORM="AMD"
 
 _DONATE_LEVEL="5"
 
@@ -48,10 +53,10 @@ _DONATE_OVER_PROXY="1"
 _HTTP_ENABLED="true"
 _HTTP_HOST=$(hostname --all-ip-addresses | awk '{print $1}')
 _HTTP_PORT="8080"
-_HTTP_ACCESS_TOKEN="null"
+_HTTP_ACCESS_TOKEN='null'
 _HTTP_RESTRICTED="false"
 
-_LOG_FILE="null"
+_LOG_FILE='null'
 
 _POOLS_ALGO="cn/r"
 _POOLS_URL="$_POOL_SERVER_URL:$_POOL_SERVER_PORT"
@@ -61,8 +66,8 @@ _POOLS_RIG_ID="$HOSTNAME"
 _POOLS_NICEHASH="true"
 _POOLS_KEEPALIVE="true"
 _POOLS_ENABLED="true"
-_POOLS_TLS="null"
-_POOLS_TLS_FINDERPRINT="null"
+_POOLS_TLS='null'
+_POOLS_TLS_FINDERPRINT='null'
 _POOLS_DAEMON="false"
 
 _PRINT_TIME="30"
@@ -72,7 +77,7 @@ _RETRIES_PAUSE="5"
 
 _SYSLOG="false"
 
-_USER_AGENT="null"
+_USER_AGENT='null'
 
 _WATCH="true"
 
